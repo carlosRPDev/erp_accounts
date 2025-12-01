@@ -1,0 +1,18 @@
+.px-4.pt-6.pb-20.max-w-xl.mx-auto
+  .bg-white/40.backdrop-blur-xl.border.border-white/20.rounded-3xl.p-6.shadow-lg
+
+    h1.text-xl.font-bold.text-gray-900 Crear empresa
+    p.text-gray-600.text-sm.mt-1 Registra tu organización para comenzar.
+
+    = form_with model: @account, url: erp_accounts.accounts_path, class: "space-y-4 mt-4" do |f|
+      .flex.flex-col.gap-2
+        = f.label :name, "Nombre de la empresa", class: "text-sm text-gray-700 font-medium"
+        = f.text_field :name,
+            class: "w-full rounded-xl border-gray-300 focus:ring-orange-500 focus:border-orange-500"
+        
+        = f.label :subdomain, "Nombre del subdominio de la empresa", class: "text-sm text-gray-700 font-medium"
+        = f.text_field :subdomain,
+            class: "w-full rounded-xl border-gray-300 focus:ring-orange-500 focus:border-orange-500"
+
+      = f.submit "Crear empresa",
+          class: "w-full px-4 py-2 bg-orange-500 text-white text-sm rounded-xl shadow hover:bg-orange-600 transition"
