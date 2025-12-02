@@ -1,0 +1,12 @@
+- return unless visible?
+div[class="card-module mx-4 bg-white/30 backdrop-blur-xl shadow-xl rounded-2xl p-6 border border-white/20 transition hover:scale-[1.02]"]
+  div[class="flex items-center justify-between"]
+    div[class="flex items-center gap-3"]
+      i[class="fa-solid fa-users text-slate-700 text-3xl"]
+      div[class="flex flex-col"]
+        p[class="text-xl font-semibold text-slate-800"] Gestionar trabajadores
+        p[class="text-sm text-slate-600 mt-1"] Administra usuarios, roles y permisos del negocio.
+
+    = link_to workers_path, class: "px-4 py-2 rounded-xl bg-slate-800 text-white text-sm font-semibold hover:bg-slate-900 transition" do
+      i[clas="fa-solid fa-arrow-right mr-2"]
+      | Ir al módulo

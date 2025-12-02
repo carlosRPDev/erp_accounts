@@ -1,0 +1,34 @@
+div[class="grid grid-col-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5"]
+  
+  div[class="order-1 lg:order-none sm:col-span-2 lg:col-span-3 lg:col-start-2"]
+    = render ErpAccounts::BusinessOverview::BaseComponent.new(current_user: current_user, account: @account)
+
+  div[class="order-2 lg:order-none lg:row-start-2"]
+    = render ErpAccounts::InvoicesBilling::BaseComponent.new(current_user: current_user, account: @account)
+  
+  div[class="order-3 lg:order-none lg:row-start-2"]
+    = render ErpAccounts::TeamActivity::BaseComponent.new(current_user: current_user, account: @account)
+  
+  div[class="order-4 lg:order-none lg:row-start-2"]
+    = render ErpAccounts::InventorySummary::BaseComponent.new(current_user: current_user, account: @account)
+  
+  div[class="order-5 lg:order-none sm:col-span-2 lg:col-span-3 lg:row-span-2 lg:col-start-1 lg:row-start-3"]
+    = render ErpAccounts::KpiCards::BaseComponent.new(current_user: current_user, account: @account)
+    = render ErpAccounts::CashierToday::BaseComponent.new(current_user: current_user, account: @account)
+    = render ErpAccounts::SalesStats::BaseComponent.new(current_user: current_user, account: @account)
+
+  div[class="order-10 lg:order-none lg:col-start-4 lg:row-start-3"]
+    = render ErpAccounts::WorkersModuleCard::BaseComponent.new(current_user: current_user, account: @account)
+  
+  div[class="order-11 lg:order-none lg:col-start-5 lg:row-start-3"]
+    = render ErpAccounts::WorkersModuleCard::BaseComponent.new(current_user: current_user, account: @account)
+  
+  div[class="order-12 lg:order-none lg:col-start-4 lg:row-start-4"]
+    = render ErpAccounts::WorkersModuleCard::BaseComponent.new(current_user: current_user, account: @account)
+  
+  div[class="order-13 lg:order-none lg:col-start-5 lg:row-start-4"]
+    = render ErpAccounts::WorkersModuleCard::BaseComponent.new(current_user: current_user, account: @account)
+  
+  div[class="order-14 lg:order-none lg:row-start-5"]
+  
+  div[class="order-14 lg:order-none lg:row-start-5 mb-20"]

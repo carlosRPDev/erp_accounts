@@ -1,0 +1,11 @@
+- if visible_for_roles?(:owner, :admin)
+  div[class="bg-white/20 backdrop-blur-xl border border-white/20 rounded-3xl shadow-xl p-6 flex items-center gap-6 mx-4 mt-6"]
+    img[class="w-20 h-20 rounded-xl object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnSHNqAwkrbBLZSck-tp8tNQY2DKp1S5cN0pC9sppZ15vpyKBRUiFWMC39vZf-U1mZKAQ&usqp=CAU" alt=(@account.name)]
+    
+    div[class="flex-1"]
+      h2[class="text-xl font-bold text-gray-800"] = @account.name
+      p[class="text-sm text-gray-500 mt-1"] = "#{@account.users.count} usuarios · Creado: #{I18n.l(@account.created_at.to_date)}"
+      div[class="mt-3 flex items-center gap-3"]
+        span[class="badge bg-white/30 rounded-full px-3 py-1 text-xs text-gray-700"] = "Plan: Básico"
+        - if owner?
+          span[class="badge bg-white/30 rounded-full px-3 py-1 text-xs text-green-700"] = "Owner"
