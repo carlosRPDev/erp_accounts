@@ -6,13 +6,13 @@ module ErpAccounts
   class Engine < ::Rails::Engine
     isolate_namespace ErpAccounts
     
-    initializer "erp_users.setup" do |app|
+    initializer "erp_accounts.setup" do |app|
       ActiveSupport.on_load(:action_controller_base) do
         append_view_path Rails.root.join("app", "views")
       end
     end
 
-    initializer "erp_users.i18n" do |app|
+    initializer "erp_accounts.i18n" do |app|
       config.i18n.load_path += Dir[root.join("config/locales/**/*.{rb,yml}")]
     end
 
