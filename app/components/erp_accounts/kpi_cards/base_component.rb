@@ -7,9 +7,7 @@ module ErpAccounts
       @account = account
     end
 
-
     def kpis
-      # Mocks — reemplazar por queries reales
       {
       ventas_hoy: 240_000,
       pedidos_nuevos: 12,

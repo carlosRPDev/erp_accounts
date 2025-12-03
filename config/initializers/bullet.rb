@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 if defined?(Bullet) && Rails.env.development?
   ErpUsers::Engine.config.after_initialize do
     Bullet.enable        = true
