@@ -21,14 +21,14 @@ module ErpAccounts
         # TODO: Revisar si se relaiza una doble peticion ya que puede que el cliente
         # no tenga account asociado y no sea owner
         # deberia redirigirlo al onboarding dashboard
-        redirect_to erp_users.clients_dashboard_path, alert: I18n.l(unauthorized_create) and return
+        redirect_to erp_users.clients_dashboard_path, alert: I18n.t("erp_accounts.accounts.unauthorized_create") and return
       end
 
       svc = ErpCore::CreateAccountService.new(user: current_user, params: account_params)
       result = svc.call
 
       if result.success
-        flash[:notice] = I18n.l(created_successfully)
+        flash[:notice] = I18n.t("erp_accounts.accounts.created_successfully")
         redirect_to ErpAccounts::Engine.routes.url_helpers.account_path(result.account.id)
       else
         @account = result.account
@@ -63,7 +63,7 @@ module ErpAccounts
       return redirect_to erp_users.clients_dashboard_path unless @account
 
       unless current_user.accounts.exists?(@account.id)
-        redirect_to erp_users.clients_dashboard_path, alert: I18n.l(no_access)
+        redirect_to erp_users.clients_dashboard_path, alert: I18n.t("erp_accounts.accounts.no_access")
       end
     end
   end
