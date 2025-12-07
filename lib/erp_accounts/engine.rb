@@ -5,7 +5,7 @@ require "view_component/engine"
 module ErpAccounts
   class Engine < ::Rails::Engine
     isolate_namespace ErpAccounts
-    
+
     initializer "erp_accounts.setup" do |app|
       ActiveSupport.on_load(:action_controller_base) do
         append_view_path Rails.root.join("app", "views")

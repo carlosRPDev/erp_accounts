@@ -43,7 +43,7 @@ module ErpAccounts
     def account_params
       params.require(:account).permit(:name, :subdomain)
     end
-    
+
     def load_account
       if params[:id].present?
         @account = ErpCore::Account.find(params[:id])
@@ -53,7 +53,7 @@ module ErpAccounts
 
     def can_create_account?(user)
       return false unless user.present?
-      return true if user.new_without_roles_or_accounts?      
+      return true if user.new_without_roles_or_accounts?
       user.has_role?("owner")
     end
 
