@@ -8,7 +8,7 @@ module ErpAccounts
     end
 
     def series
-      [40, 65, 30, 80, 55, 95, 70]
+      [ 40, 65, 30, 80, 55, 95, 70 ]
     end
   end
 end

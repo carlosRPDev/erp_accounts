@@ -1,0 +1,6 @@
+es:
+  erp_accounts:
+    accounts:
+      unauthorized_create: "No autorizado para crear empresas"
+      created_successfully: "Empresa creada correctamente."
+      no_access: "No tienes acceso."

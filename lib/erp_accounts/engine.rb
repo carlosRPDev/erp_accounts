@@ -8,7 +8,7 @@ module ErpAccounts
 
     initializer "erp_accounts.setup" do |app|
       ActiveSupport.on_load(:action_controller_base) do
-        append_view_path Rails.root.join("app", "views")
+        append_view_path Rails.root.join("app/views")
       end
     end
 
