@@ -14,7 +14,8 @@ module ErpAccounts
 
     def create
       unless can_create_account?(current_user)
-        # TODO: Revisar si se relaiza una doble peticion ya que puede que el cliente no tenga account asociado y no sea owner
+        # TODO: Revisar si se relaiza una doble peticion ya que puede que el cliente
+        # no tenga account asociado y no sea owner
         # deberia redirigirlo al onboarding dashboard
         redirect_to erp_users.clients_dashboard_path, alert: "No autorizado para crear empresas" and return
       end
