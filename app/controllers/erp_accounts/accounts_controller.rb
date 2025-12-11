@@ -43,20 +43,21 @@ module ErpAccounts
     private
 
     def account_params
-      params.expect(:account [:name, :subdomain])
+      params.expect(account: [ :name, :subdomain ])
     end
 
     def load_account
-      if params[:id].present?
-        @account = ErpCore::Account.find(params[:id])
+      @account = ErpCore::Account.find_by(id: params[:id])
+
+      if @account
         session[:current_account_id] = @account.id
       end
     end
 
     def can_create_account?(user)
-      return false if user.present?
       return true if user.new_without_roles_or_accounts?
-      user.has_role?("owner")
+      return true if user.has_role?("owner")
+      false
     end
 
     def authorize_account!
