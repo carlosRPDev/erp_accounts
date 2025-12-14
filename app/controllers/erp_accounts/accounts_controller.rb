@@ -4,9 +4,9 @@ module ErpAccounts
   class AccountsController < ApplicationController
     layout "erp_accounts/application"
 
-    before_action :authenticate_user!
     before_action :load_account, only: %i[show]
     before_action :authorize_account!, only: %i[show]
+    before_action :authenticate_user!
 
     def show; end
 
